@@ -184,6 +184,7 @@ type ChatCompletionResponseFormat struct {
 
 // ChatCompletionRequest represents a request structure for chat completion API.
 type ChatCompletionRequest struct {
+	Id               string                        `json:"id,omitempty"`
 	Model            string                        `json:"model"`
 	Messages         []ChatCompletionMessage       `json:"messages"`
 	MaxTokens        int                           `json:"max_tokens,omitempty"`
@@ -345,7 +346,11 @@ func (c *Client) CreateChatCompletion(
 		return
 	}
 
-	req, err := c.newRequest(ctx, http.MethodPost, c.fullURL(urlSuffix, request.Model), withBody(request))
+	fullURL := c.fullURL(urlSuffix, request.Model)
+	if request.Id != "" {
+		fullURL += "/" + request.Id
+	}
+	req, err := c.newRequest(ctx, http.MethodPost, fullURL, withBody(request))
 	if err != nil {
 		return
 	}
