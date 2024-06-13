@@ -5,15 +5,14 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"github.com/VictorMarcolino/go-openai"
+	"github.com/VictorMarcolino/go-openai/internal/test/checks"
 	"io"
 	"net/http"
 	"os"
 	"strconv"
 	"testing"
 	"time"
-
-	"github.com/sashabaranov/go-openai"
-	"github.com/sashabaranov/go-openai/internal/test/checks"
 )
 
 func TestFileBytesUpload(t *testing.T) {

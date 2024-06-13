@@ -4,16 +4,15 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
+	"github.com/VictorMarcolino/go-openai"
+	"github.com/VictorMarcolino/go-openai/internal/test"
+	"github.com/VictorMarcolino/go-openai/internal/test/checks"
 	"io"
 	"mime"
 	"net/http"
 	"os"
 	"path/filepath"
 	"testing"
-
-	"github.com/sashabaranov/go-openai"
-	"github.com/sashabaranov/go-openai/internal/test"
-	"github.com/sashabaranov/go-openai/internal/test/checks"
 )
 
 func TestSpeechIntegration(t *testing.T) {

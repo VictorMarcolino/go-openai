@@ -4,11 +4,10 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
+	"github.com/VictorMarcolino/go-openai"
+	"github.com/VictorMarcolino/go-openai/internal/test/checks"
 	"net/http"
 	"testing"
-
-	"github.com/sashabaranov/go-openai"
-	"github.com/sashabaranov/go-openai/internal/test/checks"
 )
 
 // TestGetEngine Tests the retrieve engine endpoint of the API using the mocked server.

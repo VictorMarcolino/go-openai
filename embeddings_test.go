@@ -6,13 +6,12 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"github.com/VictorMarcolino/go-openai"
+	"github.com/VictorMarcolino/go-openai/internal/test/checks"
 	"math"
 	"net/http"
 	"reflect"
 	"testing"
-
-	"github.com/sashabaranov/go-openai"
-	"github.com/sashabaranov/go-openai/internal/test/checks"
 )
 
 func TestEmbedding(t *testing.T) {
